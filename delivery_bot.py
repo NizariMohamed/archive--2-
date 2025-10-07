@@ -6,6 +6,13 @@ import joblib
 st.set_page_config(page_title="Delivery Time Prediction", page_icon="🚚")
 
 
+page = st.sidebar.radio("Go to", ["Home", "About", "Projects", "Contact"])
+if page == "Home":
+    st.title("Welcome!")
+elif page == "About":
+    st.markdown("### About Me")
+
+
 # Load model and columns
 model = joblib.load('delivery_model.pkl')
 model_columns = joblib.load('model_columns.pkl')
